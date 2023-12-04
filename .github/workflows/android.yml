@@ -1,10 +1,6 @@
 name: Android CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: [push]
 
 jobs:
   build:
@@ -23,5 +19,25 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: chmod +x gradlew
-  
+      run: ./gradlew build
+
+    - name: Run Tests
+      run: ./gradlew test
+
+    - name: Store Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: app/build/test-results
+
+    - name: Store Build Reports
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-reports
+        path: app/build/reports
+
+    - name: Store Debug APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: debug-apk
+        path: app/build/outputs/apk/debug/
