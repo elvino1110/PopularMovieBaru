@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PopularMovie</string>
+    <string name="popular_movie">Popular Movie</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+    <string name="success_save_movie">Movie Berhasil Disimpan</string>
+    <string name="success_delate_movie">Movie Berhasil Dihapus</string>
+    <string name="see">Lihat</string>
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="title_favorite">Favorites</string>
+    <string name="search_title">Search Title</string>
+</resources>
